@@ -48,8 +48,7 @@ type Wallet struct {
 }
 
 type Bag struct {
-	Weapon
-	Potion
+	Item
 }
 
 type Inventory struct {
@@ -63,7 +62,7 @@ func (player Player) Purchase(item Item) (int, bool, Item) {
 		player.Coin -= item.Price
 		Purchased = true
 	} else {
-		fmt.Printf("You don't have enough money to buy %v that item Price: %v\n", item.Name, item.Price)
+		fmt.Printf("You don't have enough money to buy %v Item's Price: %v\n", item.Name, item.Price)
 		fmt.Println("Your Balance: ", player.Coin)
 	}
 	return player.Coin, Purchased, item
@@ -86,6 +85,7 @@ func main() {
 				Wallet: Wallet{
 					Coin: 1000000,
 				},
+				Bag: Bag{},
 			},
 		},
 	}
@@ -106,5 +106,15 @@ func main() {
 	fmt.Println(w.Power)
 
 	fmt.Println(p.Purchase(w))
+
+	b := Bag{
+		w,
+	}
+
+	fmt.Println(b)
+
+	fmt.Println(p.Bag)
+	p.Bag = b
+	fmt.Println(p.Bag)
 
 }
