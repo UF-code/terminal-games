@@ -31,15 +31,15 @@ type Player struct {
 type Item struct {
 	Name  string
 	Price int
+	Potion
+	Weapon
 }
 
 type Potion struct {
-	Item
 	Health int
 }
 
 type Weapon struct {
-	Item
 	Power int
 }
 
@@ -57,7 +57,7 @@ type Inventory struct {
 	Bag
 }
 
-func (player Player) Purchase(item Item) (int, bool) {
+func (player Player) Purchase(item Item) (int, bool, Item) {
 	Purchased := false
 	if player.Coin >= item.Price {
 		player.Coin -= item.Price
@@ -66,13 +66,45 @@ func (player Player) Purchase(item Item) (int, bool) {
 		fmt.Printf("You don't have enough money to buy %v that item Price: %v\n", item.Name, item.Price)
 		fmt.Println("Your Balance: ", player.Coin)
 	}
-	return player.Coin, Purchased
+	return player.Coin, Purchased, item
 }
 
-func (player Player) AddToInventory() {
+func (player Player) AddToInventory(item Item) {
 
 }
 
 func main() {
+	p := Player{
+		Character: Character{
+			Name:       "uf-war",
+			Class:      "Warrior King",
+			Level:      100,
+			Experience: 0,
+			Health:     10000,
+			Power:      1000,
+			Inventory: Inventory{
+				Wallet: Wallet{
+					Coin: 1000000,
+				},
+			},
+		},
+	}
+
+	fmt.Println(p)
+	fmt.Println(p.Name)
+
+	w := Item{
+		Name:  "God King's Platinium Sword",
+		Price: 199,
+		Weapon: Weapon{
+			Power: 1949,
+		},
+	}
+
+	fmt.Println(w.Name)
+	fmt.Println(w.Price)
+	fmt.Println(w.Power)
+
+	fmt.Println(p.Purchase(w))
 
 }
