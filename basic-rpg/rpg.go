@@ -48,7 +48,7 @@ type Wallet struct {
 }
 
 type Bag struct {
-	Item
+	Items []Item
 }
 
 type Inventory struct {
@@ -68,7 +68,7 @@ func (player Player) Purchase(item Item) (int, bool, Item) {
 	return player.Coin, Purchased, item
 }
 
-func (player Player) AddToInventory(item Item) {
+func (player *Player) AddToInventory(item Item) {
 
 }
 
@@ -85,7 +85,6 @@ func main() {
 				Wallet: Wallet{
 					Coin: 1000000,
 				},
-				Bag: Bag{},
 			},
 		},
 	}
@@ -100,6 +99,13 @@ func main() {
 			Power: 1949,
 		},
 	}
+	w2 := Item{
+		Name:  "God King's Gold Sword",
+		Price: 99,
+		Weapon: Weapon{
+			Power: 949,
+		},
+	}
 
 	fmt.Println(w.Name)
 	fmt.Println(w.Price)
@@ -107,14 +113,12 @@ func main() {
 
 	fmt.Println(p.Purchase(w))
 
-	b := Bag{
-		w,
-	}
+	fmt.Println(p.Items)
 
-	fmt.Println(b)
+	p.Items = append(p.Items, w)
 
-	fmt.Println(p.Bag)
-	p.Bag = b
-	fmt.Println(p.Bag)
+	fmt.Println(p.Items)
 
+	p.Items = append(p.Items, w2)
+	fmt.Println(p.Items)
 }
