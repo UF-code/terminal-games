@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Character struct {
 	Name       string
 	Class      string
@@ -7,7 +9,7 @@ type Character struct {
 	Experience int
 	Health     int
 	Power      int
-	Money      int
+	Wallet     int
 }
 
 type NPC_Shop struct {
@@ -39,6 +41,18 @@ type Potion struct {
 type Weapon struct {
 	Item
 	Power int
+}
+
+func (player Player) Purchase(item Item) (int, bool) {
+	Purchased := false
+	if player.Wallet >= item.Price {
+		player.Wallet -= item.Price
+		Purchased = true
+	} else {
+		fmt.Printf("You don't have enough money to buy %v that item Price: %v\n", item.Name, item.Price)
+		fmt.Println("Your Balance: ", player.Wallet)
+	}
+	return player.Wallet, Purchased
 }
 
 func main() {
