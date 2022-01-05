@@ -1,10 +1,13 @@
 package main
 
 type Character struct {
-	Name   string
-	Class  string
-	Health int
-	Power  int
+	Name       string
+	Class      string
+	Level      int
+	Experience int
+	Health     int
+	Power      int
+	Money      int
 }
 
 type NPC_Shop struct {
@@ -21,6 +24,21 @@ type Enemy struct {
 
 type Player struct {
 	Character
+}
+
+type Item struct {
+	Name  string
+	Price int
+}
+
+type Potion struct {
+	Item
+	Health int
+}
+
+type Weapon struct {
+	Item
+	Power int
 }
 
 func main() {
