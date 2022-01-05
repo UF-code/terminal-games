@@ -9,7 +9,7 @@ type Character struct {
 	Experience int
 	Health     int
 	Power      int
-	Wallet     int
+	Inventory
 }
 
 type NPC_Shop struct {
@@ -43,16 +43,34 @@ type Weapon struct {
 	Power int
 }
 
+type Wallet struct {
+	Coin int
+}
+
+type Bag struct {
+	Weapon
+	Potion
+}
+
+type Inventory struct {
+	Wallet
+	Bag
+}
+
 func (player Player) Purchase(item Item) (int, bool) {
 	Purchased := false
-	if player.Wallet >= item.Price {
-		player.Wallet -= item.Price
+	if player.Coin >= item.Price {
+		player.Coin -= item.Price
 		Purchased = true
 	} else {
 		fmt.Printf("You don't have enough money to buy %v that item Price: %v\n", item.Name, item.Price)
-		fmt.Println("Your Balance: ", player.Wallet)
+		fmt.Println("Your Balance: ", player.Coin)
 	}
-	return player.Wallet, Purchased
+	return player.Coin, Purchased
+}
+
+func (player Player) AddToInventory() {
+
 }
 
 func main() {
