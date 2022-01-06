@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type Character struct {
 	Class
@@ -80,24 +82,35 @@ func (player *Player) Purchase(item Item) {
 // 	player.Name = "uf-war"
 // }
 
-func CreateClass() (Class, Class) {
-	WarriorKing := Class{
-		Job:    "Warior King",
-		Health: 2000,
-		Power:  1000,
+func CreateClass(choice int) Class {
+	var class Class
+
+	if choice == 1 {
+		WarriorKing := Class{
+			Job:    "Warior King",
+			Health: 2000,
+			Power:  1000,
+		}
+		class = WarriorKing
+
+	} else if choice == 2 {
+		WitchKing := Class{
+			Job:    "Witch King",
+			Health: 1000,
+			Power:  2000,
+		}
+		class = WitchKing
 	}
 
-	WitchKing := Class{
-		Job:    "Witch King",
-		Health: 1000,
-		Power:  2000,
-	}
-
-	return WarriorKing, WitchKing
+	return class
 }
 
 func CreatePlayer() Player {
 	player := new(Player)
+
+	class := CreateClass(1)
+
+	fmt.Println(class)
 
 	return *player
 }
