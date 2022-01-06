@@ -3,13 +3,17 @@ package main
 import "fmt"
 
 type Character struct {
+	Class
 	Name       string
-	Class      string
 	Level      int
 	Experience int
-	Health     int
-	Power      int
 	Inventory
+}
+
+type Class struct {
+	Job    string
+	Health int
+	Power  int
 }
 
 type NPC_Shop struct {
@@ -72,19 +76,36 @@ func (player *Player) Purchase(item Item) {
 // 	player.Items = append(player.Items, item)
 // }
 
-func (player *Player) addName() {
-	player.Name = "uf-war"
+// func (player *Player) addName() {
+// 	player.Name = "uf-war"
+// }
+
+func CreateClass() (Class, Class) {
+	WarriorKing := Class{
+		Job:    "Warior King",
+		Health: 2000,
+		Power:  1000,
+	}
+
+	WitchKing := Class{
+		Job:    "Witch King",
+		Health: 1000,
+		Power:  2000,
+	}
+
+	return WarriorKing, WitchKing
 }
 
 func CreatePlayer() Player {
 	player := new(Player)
+
 	return *player
 }
 
 func main() {
 	player := CreatePlayer()
 	fmt.Println(player)
-	player.addName()
+	// player.addName()
 	fmt.Println(player)
 
 	// var x Player // x == nil
