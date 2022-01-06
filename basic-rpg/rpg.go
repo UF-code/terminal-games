@@ -56,69 +56,92 @@ type Inventory struct {
 	Bag
 }
 
-func (player Player) Purchase(item Item) (int, bool, Item) {
-	Purchased := false
+func (player *Player) Purchase(item Item) {
+	// Purchased := false
 	if player.Coin >= item.Price {
 		player.Coin -= item.Price
-		Purchased = true
+		player.Items = append(player.Items, item)
 	} else {
 		fmt.Printf("You don't have enough money to buy %v Item's Price: %v\n", item.Name, item.Price)
 		fmt.Println("Your Balance: ", player.Coin)
 	}
-	return player.Coin, Purchased, item
+	// return Purchased
 }
 
-func (player *Player) AddToInventory(item Item) {
+// func (player *Player) AddToBag(item Item) {
+// 	player.Items = append(player.Items, item)
+// }
 
+func (player *Player) addName() {
+	player.Name = "uf-war"
+}
+
+func CreatePlayer() Player {
+	player := new(Player)
+	return *player
 }
 
 func main() {
-	p := Player{
-		Character: Character{
-			Name:       "uf-war",
-			Class:      "Warrior King",
-			Level:      100,
-			Experience: 0,
-			Health:     10000,
-			Power:      1000,
-			Inventory: Inventory{
-				Wallet: Wallet{
-					Coin: 1000000,
-				},
-			},
-		},
-	}
+	player := CreatePlayer()
+	fmt.Println(player)
+	player.addName()
+	fmt.Println(player)
 
-	fmt.Println(p)
-	fmt.Println(p.Name)
+	// var x Player // x == nil
+	// var x *Player
+	// x = new(Player) // x == &Player{}
 
-	w := Item{
-		Name:  "God King's Platinium Sword",
-		Price: 199,
-		Weapon: Weapon{
-			Power: 1949,
-		},
-	}
-	w2 := Item{
-		Name:  "God King's Gold Sword",
-		Price: 99,
-		Weapon: Weapon{
-			Power: 949,
-		},
-	}
+	// p := Player{
+	// 	Character: Character{
+	// 		Name:       "uf-war",
+	// 		Class:      "Warrior King",
+	// 		Level:      100,
+	// 		Experience: 0,
+	// 		Health:     10000,
+	// 		Power:      1000,
+	// 		Inventory: Inventory{
+	// 			Wallet: Wallet{
+	// 				Coin: 1000000,
+	// 			},
+	// 		},
+	// 	},
+	// }
 
-	fmt.Println(w.Name)
-	fmt.Println(w.Price)
-	fmt.Println(w.Power)
+	// fmt.Println(p)
+	// fmt.Println(p.Name)
 
-	fmt.Println(p.Purchase(w))
+	// w := Item{
+	// 	Name:  "God King's Platinium Sword",
+	// 	Price: 199,
+	// 	Weapon: Weapon{
+	// 		Power: 1949,
+	// 	},
+	// }
+	// w2 := Item{
+	// 	Name:  "God King's Gold Sword",
+	// 	Price: 99,
+	// 	Weapon: Weapon{
+	// 		Power: 949,
+	// 	},
+	// }
 
-	fmt.Println(p.Items)
+	// fmt.Println(w.Name)
+	// fmt.Println(w.Price)
+	// fmt.Println(w.Power)
 
-	p.Items = append(p.Items, w)
+	// p.Purchase(w)
+	// // fmt.Println(*p.Purchase(w))
 
-	fmt.Println(p.Items)
+	// fmt.Println(p.Items)
 
-	p.Items = append(p.Items, w2)
-	fmt.Println(p.Items)
+	// p.Items = append(p.Items, w)
+
+	// fmt.Println(p.Items)
+
+	// p.Items = append(p.Items, w2)
+	// fmt.Println(p.Items)
+
+	// // p.AddToBag(w)
+
+	// fmt.Println(p.Items)
 }
