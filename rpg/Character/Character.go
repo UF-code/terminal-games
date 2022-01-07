@@ -2,13 +2,16 @@ package Character
 
 import (
 	"fmt"
-	NonPlayableCharacter "rpg/Character/NPC"
-	PlayableCharacter "rpg/Character/PC"
 )
+
+type Character_Template struct {
+	Health int
+	Power  int
+}
 
 func Character() {
 	fmt.Println("Hey")
-	NonPlayableCharacter.NPC()
-	PlayableCharacter.PC()
+	NPC()
+	PC()
 
 }
