@@ -1,4 +1,4 @@
-package Character
+package NonPlayableCharacter
 
 import "fmt"
 
