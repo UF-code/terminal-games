@@ -7,7 +7,7 @@ import (
 
 type Shop struct {
 	Character_Template
-	Inventory.Items
+	Inventory.Bag
 }
 
 func NPC() {
@@ -18,10 +18,10 @@ func NPC() {
 			Health: 100,
 			Power:  200,
 		},
-		Inventory.Items{
-			Item: []Inventory.Item{
-				Item
-			}
+		Inventory.Bag{
+			Items: []Inventory.Item{{Name: "Sword", Power: 100}, {Name: "Dagger", Power: 200}},
 		},
 	}
+
+	fmt.Println(s)
 }

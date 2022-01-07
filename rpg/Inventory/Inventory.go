@@ -1,7 +1,7 @@
 package Inventory
 
-type Items struct {
-	Item []Item
+type Bag struct {
+	Items []Item
 }
 
 type Item struct {
