@@ -3,7 +3,6 @@ package Character
 import (
 	"fmt"
 	"rpg/Inventory"
-	"rpg/Inventory/tired"
 )
 
 type Shop struct {
@@ -25,5 +24,5 @@ func NPC() {
 	}
 
 	fmt.Println(s)
-	tired.Hey()
+	// tired.Hey()
 }
