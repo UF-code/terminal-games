@@ -1,10 +1,10 @@
 package main
 
 import (
-	"rpg/Character"
-	"rpg/Character/PlayableCharacter"
-	"rpg/Inventory"
-	"rpg/Inventory/Tired"
+	"uf-war/Character"
+	"uf-war/Character/PlayableCharacter"
+	"uf-war/Inventory"
+	"uf-war/Inventory/Tired"
 )
 
 func main() {

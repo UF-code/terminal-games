@@ -1,12 +1,13 @@
-package Character
+package NonPlayableCharacter
 
 import (
 	"fmt"
-	"rpg/Inventory"
+	"uf-war/Character"
+	"uf-war/Inventory"
 )
 
 type Shop struct {
-	Character_Template
+	Character.Character_Template
 	Inventory.Bag
 }
 
@@ -14,7 +15,7 @@ func NPC() {
 	fmt.Println("Hey NPC")
 
 	s := Shop{
-		Character_Template{
+		Character.Character_Template{
 			Health: 100,
 			Power:  200,
 		},

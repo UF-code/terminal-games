@@ -2,7 +2,7 @@ package Tired
 
 import (
 	"fmt"
-	"rpg/Character/PlayableCharacter"
+	"uf-war/Character/PlayableCharacter"
 )
 
 func Hey() {

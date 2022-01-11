@@ -2,6 +2,7 @@ package Character
 
 import (
 	"fmt"
+	// "uf-war/Character/NonPlayableCharacter"
 )
 
 type Character_Template struct {
@@ -11,7 +12,7 @@ type Character_Template struct {
 
 func Character() {
 	fmt.Println("Hey")
-	NPC()
+	// NonPlayableCharacter.NPC()
 	// fmt.Println("Up one func")
 	// PlayableCharacter.PC()
 	// Character.PC()
