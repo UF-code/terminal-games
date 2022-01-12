@@ -2,12 +2,11 @@ package PlayableCharacter
 
 import (
 	"fmt"
-	"uf-war/Character/NonPlayableCharacter"
 )
 
 func PC() {
 	fmt.Println("Hey PC")
-	NonPlayableCharacter.NPC()
+	// NonPlayableCharacter.NPC()
 	fmt.Println("Hey PC")
 
 	// s := Character.Character_Template{

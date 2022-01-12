@@ -1,7 +1,6 @@
 package NonPlayableCharacter
 
 import (
-	"fmt"
 	"uf-war/Character"
 	"uf-war/Inventory"
 )
@@ -11,19 +10,19 @@ type Shop struct {
 	Inventory.Bag
 }
 
-func NPC() {
-	fmt.Println("Hey NPC")
+// func NPC() {
+// 	fmt.Println("Hey NPC")
 
-	s := Shop{
-		Character.Character_Template{
-			Health: 100,
-			Power:  200,
-		},
-		Inventory.Bag{
-			Items: []Inventory.Item{{Name: "Sword", Power: 100}, {Name: "Dagger", Power: 200}},
-		},
-	}
+// 	s := Shop{
+// 		Character.Character_Template{
+// 			Health: 100,
+// 			Power:  200,
+// 		},
+// 		Inventory.Bag{
+// 			Items: []Inventory.Item{{Name: "Sword", Power: 100}, {Name: "Dagger", Power: 200}},
+// 		},
+// 	}
 
-	fmt.Println(s)
-	// tired.Hey()
-}
+// 	fmt.Println(s)
+// 	// tired.Hey()
+// }
