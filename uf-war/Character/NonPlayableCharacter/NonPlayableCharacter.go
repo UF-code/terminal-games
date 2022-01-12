@@ -1,14 +1,13 @@
 package NonPlayableCharacter
 
-import (
-	"uf-war/Character"
-	"uf-war/Inventory"
-)
+// type Shop struct {
+// 	Character.Character_Template
+// 	Inventory.Bag
+// }
 
-type Shop struct {
-	Character.Character_Template
-	Inventory.Bag
-}
+// type Quest struct {
+// 	Character.Character_Template
+// }
 
 // func NPC() {
 // 	fmt.Println("Hey NPC")

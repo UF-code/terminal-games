@@ -5,6 +5,7 @@ import (
 	"uf-war/Character/PlayableCharacter"
 	"uf-war/Inventory"
 	"uf-war/Inventory/Tired"
+	"uf-war/Shop"
 )
 
 func main() {
@@ -12,4 +13,7 @@ func main() {
 	PlayableCharacter.PC()
 	Inventory.Test()
 	Tired.Hey()
+
+	Shop.Market_test()
+
 }
