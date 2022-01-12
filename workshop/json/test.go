@@ -1,16 +1,12 @@
-package Creator
+package main
 
 import (
 	"fmt"
 	"os"
-	"uf-war/Creator/CreateItem"
-	"uf-war/Creator/CreateQuest"
 )
 
-func Create() {
-	fmt.Println("Hey")
-	CreateItem.CreateItem()
-	CreateQuest.CreateQuest()
+func main() {
+
 }
 
 func CreateJson(FileName string) {
@@ -23,6 +19,18 @@ func CreateJson(FileName string) {
 	defer f.Close()
 }
 
+func WriteJson(FileName string) {
+
+}
+
+func ReadJson(FileName string) {
+
+}
+
 func UpdateJson(FileName string) {
+
+}
+
+func DeleteJson(FileName string) {
 
 }

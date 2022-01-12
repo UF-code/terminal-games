@@ -17,5 +17,5 @@ func main() {
 
 	Shop.Market_test()
 
-	Creator.CreateJson()
+	Creator.CreateJson("Items.json")
 }

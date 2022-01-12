@@ -1,8 +1,6 @@
 package CreateItem
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func CreateItem() {
 	fmt.Println("CreateItem")
