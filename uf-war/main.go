@@ -3,6 +3,7 @@ package main
 import (
 	"uf-war/Character"
 	"uf-war/Character/PlayableCharacter"
+	"uf-war/Creator"
 	"uf-war/Inventory"
 	"uf-war/Inventory/Tired"
 	"uf-war/Shop"
@@ -16,4 +17,5 @@ func main() {
 
 	Shop.Market_test()
 
+	Creator.CreateJson()
 }
