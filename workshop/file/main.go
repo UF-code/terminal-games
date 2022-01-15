@@ -18,11 +18,12 @@ type Quest struct {
 	CreateQuest.Quest
 }
 
-func (i Item) conv() {
+func (i Item) conv() []uint8 {
 	bs, err := json.Marshal(i.Name)
 	fmt.Println(bs)
 	fmt.Println(err)
 	fmt.Println("Item")
+	return bs
 	// return bs
 	// return bs
 }
@@ -67,7 +68,7 @@ func CreateJson(path string) {
 }
 
 type data interface {
-	conv()
+	conv() []uint8
 }
 
 func WriteToJson(path string, d data) {
