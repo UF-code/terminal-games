@@ -20,86 +20,101 @@ type HealthPotion struct {
 }
 
 type Weapons struct {
+	WarriorWeapons
+	AssassinWeapons
+	MageWeapons
+}
+type WarriorWeapons struct {
+	Class string
 	Sword
 	Axe
-	Dagger
-	Bow
-	Wand
-	Staff
 }
-
 type Sword struct {
-	Class string
 	Level int
 	Power int
 }
 
 type Axe struct {
-	Class string
 	Level int
 	Power int
 }
 
-type Dagger struct {
+type AssassinWeapons struct {
 	Class string
+	Dagger
+	Bow
+}
+
+type Dagger struct {
 	Level int
 	Power int
 }
 
 type Bow struct {
-	Class string
 	Level int
 	Power int
 }
 
-type Wand struct {
+type MageWeapons struct {
 	Class string
+	Wand
+	Staff
+}
+
+type Wand struct {
 	Level int
 	Power int
 }
 
 type Staff struct {
-	Class string
 	Level int
 	Power int
 }
 
 type Armors struct {
-	Plate
-	IronPlate
-	Leather
-	Chitin
-	Robe
-	SilkRobe
+	WarriorClothes
+	AssassinClothes
+	MageClothes
 }
 
+type WarriorClothes struct {
+	Class string
+	Plate
+	IronPlate
+}
 type Plate struct {
-	Class  string
 	Level  int
 	Health int
 }
 type IronPlate struct {
-	Class  string
 	Level  int
 	Health int
 }
+
+type AssassinClothes struct {
+	Class string
+	Leather
+	Chitin
+}
 type Leather struct {
-	Class  string
 	Level  int
 	Health int
 }
 type Chitin struct {
-	Class  string
 	Level  int
 	Health int
 }
+
+type MageClothes struct {
+	Class string
+	Robe
+	SilkRobe
+}
 type Robe struct {
-	Class  string
 	Level  int
 	Health int
 }
 type SilkRobe struct {
-	Class  string
 	Level  int
 	Health int
 }
