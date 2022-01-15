@@ -26,11 +26,13 @@ func (i Item) conv() {
 	// return bs
 	// return bs
 }
-func (q Quest) conv() {
+func (q Quest) conv() []uint8 {
 	bs, err := json.Marshal(q.Name)
 	fmt.Println(bs)
+	fmt.Printf("%T \n", bs)
 	fmt.Println(err)
 	fmt.Println("Quest")
+	return bs
 	// return bs
 	// return bs
 }
