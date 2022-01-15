@@ -30,31 +30,37 @@ type Weapons struct {
 
 type Sword struct {
 	Class string
+	Level int
 	Power int
 }
 
 type Axe struct {
 	Class string
+	Level int
 	Power int
 }
 
 type Dagger struct {
 	Class string
+	Level int
 	Power int
 }
 
 type Bow struct {
 	Class string
+	Level int
 	Power int
 }
 
 type Wand struct {
 	Class string
+	Level int
 	Power int
 }
 
 type Staff struct {
 	Class string
+	Level int
 	Power int
 }
 
