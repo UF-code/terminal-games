@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"uf-war/Character"
 	"uf-war/Character/PlayableCharacter"
 	"uf-war/Creator"
@@ -17,5 +18,14 @@ func main() {
 
 	Shop.Market_test()
 
-	Creator.CreateJson("Items.json")
+	if !Creator.CheckFileExists("./Items/Items.json") {
+		Creator.CreateJson("./Items/Items.json")
+		fmt.Println("File is created")
+	} else {
+		fmt.Println("Sucker hehehe")
+	}
+
+	// Creator.WriteToJson("./Items/Items.json", []byte("hey there"))
+	Creator.ReadJson("./Items/Items.json")
+
 }

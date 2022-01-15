@@ -2,6 +2,8 @@ package Creator
 
 import (
 	"fmt"
+	"io/ioutil"
+	"log"
 	"os"
 )
 
@@ -30,6 +32,22 @@ func CreateJson(path string) {
 	defer f.Close()
 }
 
-func UpdateJson(path string) {
+func WriteToJson(path string, data []byte) {
+	// message := []byte("Hello, Gophers!")
+	err := ioutil.WriteFile(path, data, 0644)
+	if err != nil {
+		log.Fatal(err)
+	}
+}
+
+func ReadJson(path string) {
+
+}
+
+func UpdateJson() {
+
+}
+
+func DeleteJson() {
 
 }
