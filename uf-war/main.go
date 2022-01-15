@@ -26,6 +26,7 @@ func main() {
 	}
 
 	// Creator.WriteToJson("./Items/Items.json", []byte("hey there"))
-	Creator.ReadJson("./Items/Items.json")
+	// Creator.ReadJson("./Items/Items.json")
 
+	Creator.Create()
 }

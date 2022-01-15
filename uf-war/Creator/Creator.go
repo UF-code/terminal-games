@@ -1,17 +1,33 @@
 package Creator
 
 import (
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
+	"uf-war/Creator/CreateItem"
 )
 
+type Item struct {
+	CreateItem.Item
+}
+
+func (i Item) conv() []byte {
+	bs, err := json.Marshal(i.Name)
+	fmt.Println(err)
+	return bs
+}
 func Create() {
 	// fmt.Println("Hey")
 	// CreateItem.CreateItem()
 	// CreateQuest.CreateQuest()
-
+	i1 := Item{
+		CreateItem.Item{
+			Name: "Hey Dude",
+		},
+	}
+	i1.conv()
 }
 
 func CheckFileExists(path string) bool {
@@ -32,12 +48,28 @@ func CreateJson(path string) {
 	defer f.Close()
 }
 
-func WriteToJson(path string, data []byte) {
+type data interface {
+	conv()
+}
+
+func WriteToJson(path string, d data) {
 	// message := []byte("Hello, Gophers!")
-	err := ioutil.WriteFile(path, data, 0644)
-	if err != nil {
-		log.Fatal(err)
+
+	i1 := Item{
+		CreateItem.Item{
+			Name: "Hey Dude",
+		},
 	}
+	i1.conv()
+
+	switch d.(type) {
+	case Item:
+		err := ioutil.WriteFile(path, i1.conv(), 0644)
+		if err != nil {
+			log.Fatal(err)
+		}
+	}
+
 }
 
 func ReadJson(path string) {
