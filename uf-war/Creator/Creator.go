@@ -41,7 +41,11 @@ func WriteToJson(path string, data []byte) {
 }
 
 func ReadJson(path string) {
-
+	content, err := ioutil.ReadFile(path)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(string(content))
 }
 
 func UpdateJson() {
