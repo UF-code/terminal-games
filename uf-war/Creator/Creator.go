@@ -7,27 +7,43 @@ import (
 	"log"
 	"os"
 	"uf-war/Creator/CreateItem"
+	"uf-war/Creator/CreateQuest"
 )
 
 type Item struct {
 	CreateItem.Item
 }
 
-func (i Item) conv() []byte {
+type Quest struct {
+	CreateQuest.Quest
+}
+
+func (i Item) conv() {
 	bs, err := json.Marshal(i.Name)
+	fmt.Println(bs)
 	fmt.Println(err)
-	return bs
+	fmt.Println("Item")
+	// return bs
+	// return bs
+}
+func (q Quest) conv() {
+	bs, err := json.Marshal(q.Name)
+	fmt.Println(bs)
+	fmt.Println(err)
+	fmt.Println("Quest")
+	// return bs
+	// return bs
 }
 func Create() {
 	// fmt.Println("Hey")
 	// CreateItem.CreateItem()
 	// CreateQuest.CreateQuest()
-	i1 := Item{
-		CreateItem.Item{
-			Name: "Hey Dude",
-		},
-	}
-	i1.conv()
+	// i1 := Item{
+	// 	CreateItem.Item{
+	// 		Name: "Hey Dude",
+	// 	},
+	// }
+	// i1.conv()
 }
 
 func CheckFileExists(path string) bool {
@@ -54,20 +70,23 @@ type data interface {
 
 func WriteToJson(path string, d data) {
 	// message := []byte("Hello, Gophers!")
+	// err := ioutil.WriteFile(path, data, 0644)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
 
-	i1 := Item{
-		CreateItem.Item{
-			Name: "Hey Dude",
-		},
-	}
-	i1.conv()
+	// i1 := Item{
+	// 	CreateItem.Item{
+	// 		Name: "Hey Dude",
+	// 	},
+	// }
+	// i1.conv()
 
 	switch d.(type) {
 	case Item:
-		err := ioutil.WriteFile(path, i1.conv(), 0644)
-		if err != nil {
-			log.Fatal(err)
-		}
+		d.conv()
+	case Quest:
+		d.conv()
 	}
 
 }
