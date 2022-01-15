@@ -18,42 +18,52 @@ type Reward struct {
 	Gold int
 }
 type Level0 struct {
-	Level int
+	Level     int
+	Completed bool
 	Reward
 }
 type Level1 struct {
-	Level int
+	Level     int
+	Completed bool
 	Reward
 }
 type Level2 struct {
-	Level int
+	Level     int
+	Completed bool
 	Reward
 }
 type Level3 struct {
-	Level int
+	Level     int
+	Completed bool
 	Reward
 }
 type Level4 struct {
-	Level int
+	Level     int
+	Completed bool
 	Reward
 }
 type Level5 struct {
-	Level int
+	Level     int
+	Completed bool
 	Reward
 }
 type Level6 struct {
-	Level int
+	Level     int
+	Completed bool
 	Reward
 }
 type Level7 struct {
-	Level int
+	Level     int
+	Completed bool
 	Reward
 }
 type Level8 struct {
-	Level int
+	Level     int
+	Completed bool
 	Reward
 }
 type Level9 struct {
-	Level int
+	Level     int
+	Completed bool
 	Reward
 }
