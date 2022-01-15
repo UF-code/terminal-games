@@ -26,6 +26,7 @@ type Weapons struct {
 }
 type WarriorWeapons struct {
 	Class string
+	Name  string
 	Sword
 	Axe
 }
@@ -41,6 +42,7 @@ type Axe struct {
 
 type AssassinWeapons struct {
 	Class string
+	Name  string
 	Dagger
 	Bow
 }
@@ -57,6 +59,7 @@ type Bow struct {
 
 type MageWeapons struct {
 	Class string
+	Name  string
 	Wand
 	Staff
 }
@@ -79,6 +82,7 @@ type Armors struct {
 
 type WarriorClothes struct {
 	Class string
+	Name  string
 	Plate
 	IronPlate
 }
@@ -93,6 +97,7 @@ type IronPlate struct {
 
 type AssassinClothes struct {
 	Class string
+	Name  string
 	Leather
 	Chitin
 }
@@ -107,6 +112,7 @@ type Chitin struct {
 
 type MageClothes struct {
 	Class string
+	Name  string
 	Robe
 	SilkRobe
 }

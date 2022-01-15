@@ -5,10 +5,9 @@ import (
 	"uf-war/Character"
 	"uf-war/Character/PlayableCharacter"
 	"uf-war/Creator"
-	"uf-war/Creator/CreateItem"
-	"uf-war/Creator/CreateQuest"
 	"uf-war/Inventory"
 	"uf-war/Inventory/Tired"
+	"uf-war/Items"
 	"uf-war/Shop"
 )
 
@@ -30,19 +29,29 @@ func main() {
 	// Creator.WriteToJson("./Items/Items.json", []byte("hey there"))
 	// Creator.ReadJson("./Items/Items.json")
 
-	i1 := Creator.Item{
-		CreateItem.Item{
-			Name: "Hey Dude",
-		},
-	}
+	////////////////////////////////
+	//
+	// i1 := Creator.Item{
+	// 	CreateItem.Item{
+	// 		Name: "Hey Dude",
+	// 	},
+	// }
 
-	Creator.WriteToJson("./Items/Items.json", i1)
-	i2 := Creator.Quest{
-		CreateQuest.Quest{
-			Name: "Hey Dude",
-		},
-	}
+	// Creator.WriteToJson("./Items/Items.json", i1)
+	// i2 := Creator.Quest{
+	// 	CreateQuest.Quest{
+	// 		Name: "Hey Dude",
+	// 	},
+	// }
 
-	Creator.WriteToJson("./Items/Items.json", i2)
+	// Creator.WriteToJson("./Items/Items.json", i2)
 	Creator.Create()
+	//
+	/////////////////////
+
+	axe := Items.Axe{
+		Level: 10,
+		Power: 2000,
+	}
+	fmt.Println(axe)
 }
