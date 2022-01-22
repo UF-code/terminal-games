@@ -1,11 +1,21 @@
 package CreateItem
 
-import "fmt"
-
-type Item struct {
-	Name string
-}
+import (
+	"fmt"
+)
 
 func CreateItem() {
-	fmt.Println("CreateItem")
+	CreateAssassinItems()
+}
+
+func CreateAssassinItems() {
+	fmt.Println("Create Assassins Items")
+}
+
+func CreateWarriorItems() {
+	fmt.Println("Create Warrior Items")
+}
+
+func CreateMageItems() {
+
 }
