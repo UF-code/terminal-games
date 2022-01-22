@@ -45,6 +45,7 @@ func Create() {
 	// 	},
 	// }
 	// i1.conv()
+	fmt.Println("Getting use to it!")
 }
 
 func CheckFileExists(path string) bool {
