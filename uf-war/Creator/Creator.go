@@ -5,17 +5,17 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
-	"uf-war/Creator/CreateItem"
-	"uf-war/Creator/CreateQuest"
+	// "uf-war/Creator/CreateItem"
+	// "uf-war/Creator/CreateQuest"
 )
 
-type Item struct {
-	CreateItem.Item
-}
+// type Item struct {
+// 	CreateItem.Item
+// }
 
-type Quest struct {
-	CreateQuest.Quest
-}
+// type Quest struct {
+// 	CreateQuest.Quest
+// }
 
 // func (i Item) conv() {
 // 	bs, err := json.Marshal(i.Name)

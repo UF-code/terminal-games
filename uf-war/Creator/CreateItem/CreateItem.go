@@ -6,6 +6,8 @@ import (
 
 func CreateItem() {
 	CreateAssassinItems()
+	CreateWarriorItems()
+	CreateMageItems()
 }
 
 func CreateAssassinItems() {
@@ -17,5 +19,5 @@ func CreateWarriorItems() {
 }
 
 func CreateMageItems() {
-
+	fmt.Println("Create Mage Items")
 }

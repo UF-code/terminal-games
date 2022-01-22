@@ -5,6 +5,7 @@ import (
 	"uf-war/Character"
 	"uf-war/Character/PlayableCharacter"
 	"uf-war/Creator"
+	"uf-war/Creator/CreateItem"
 	"uf-war/Inventory"
 	"uf-war/Inventory/Tired"
 	"uf-war/Items"
@@ -18,6 +19,8 @@ func main() {
 	Tired.Hey()
 
 	Shop.Market_test()
+
+	CreateItem.CreateItem()
 
 	if !Creator.CheckFileExists("./Items/Items.json") {
 		Creator.CreateJson("./Items/Items.json")
