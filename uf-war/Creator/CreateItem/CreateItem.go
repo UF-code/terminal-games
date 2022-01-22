@@ -28,6 +28,9 @@ func CreateItem() {
 		CreateWarriorItem()
 	case choice == 3:
 		CreateMageItem()
+	default:
+		fmt.Println("There Are No Class As You Mention...")
+		fmt.Println("Exiting...")
 	}
 
 }
