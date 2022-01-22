@@ -9,6 +9,10 @@ import (
 	// "uf-war/Creator/CreateQuest"
 )
 
+func CreateTest() {
+	fmt.Println("Create Test")
+}
+
 // type Item struct {
 // 	CreateItem.Item
 // }
