@@ -5,50 +5,15 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
-	// "uf-war/Creator/CreateItem"
-	// "uf-war/Creator/CreateQuest"
-)
+
 
 func CreateTest() {
 	fmt.Println("Create Test")
 }
 
-// type Item struct {
-// 	CreateItem.Item
-// }
 
-// type Quest struct {
-// 	CreateQuest.Quest
-// }
-
-// func (i Item) conv() {
-// 	bs, err := json.Marshal(i.Name)
-// 	fmt.Println(bs)
-// 	fmt.Println(err)
-// 	fmt.Println("Item")
-// 	// return bs
-// 	// return bs
-// }
-// func (q Quest) conv() []uint8 {
-// 	bs, err := json.Marshal(q.Name)
-// 	fmt.Println(bs)
-// 	fmt.Printf("%T \n", bs)
-// 	fmt.Println(err)
-// 	fmt.Println("Quest")
-// 	return bs
-// 	// return bs
-// 	// return bs
-// }
 func Create() {
-	// fmt.Println("Hey")
-	// CreateItem.CreateItem()
-	// CreateQuest.CreateQuest()
-	// i1 := Item{
-	// 	CreateItem.Item{
-	// 		Name: "Hey Dude",
-	// 	},
-	// }
-	// i1.conv()
+
 	fmt.Println("Getting use to it!")
 }
 
@@ -70,32 +35,7 @@ func CreateJson(path string) {
 	defer f.Close()
 }
 
-// type data interface {
-// 	conv()
-// }
 
-// func WriteToJson(path string, d data) {
-// 	// message := []byte("Hello, Gophers!")
-// 	// err := ioutil.WriteFile(path, data, 0644)
-// 	// if err != nil {
-// 	// 	log.Fatal(err)
-// 	// }
-
-// 	// i1 := Item{
-// 	// 	CreateItem.Item{
-// 	// 		Name: "Hey Dude",
-// 	// 	},
-// 	// }
-// 	// i1.conv()
-
-// 	switch d.(type) {
-// 	case Item:
-// 		d.conv()
-// 	case Quest:
-// 		d.conv()
-// 	}
-
-// }
 
 func ReadJson(path string) {
 	content, err := ioutil.ReadFile(path)
