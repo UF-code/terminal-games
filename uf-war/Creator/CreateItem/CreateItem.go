@@ -36,7 +36,7 @@ func CreateItem() {
 }
 
 func CreateAssassinItem() {
-	fmt.Println("Create Assassins Items")
+
 }
 
 func CreateWarriorItem() {
